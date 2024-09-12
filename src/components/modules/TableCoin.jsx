@@ -1,6 +1,7 @@
 import React from 'react'
 
-function TableCoin() {
+function TableCoin({coins}) {
+  console.log(coins)
   return (
     <div>TableCoin</div>
   )

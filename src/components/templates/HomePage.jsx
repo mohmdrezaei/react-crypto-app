@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import TableCoin from "../modules/TableCoin";
+import { getCoinList } from "../../services/cryptoApi";
 
 function HomePage() {
-    const [coins , setCoins] = useState([])
+  const [coins, setCoins] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&x_cg_demo_api_key=CG-nh2FW1kLYhzfWsLsULBcRjHH"
-    )
-      .then((res) => res.json())
-      .then((json) => setCoins(json));
+    const getData = async () => {
+      const res = await fetch(getCoinList());
+      const json = await res.json();
+      setCoins(json);
+    };
+    getData();
   }, []);
   return (
     <div>
-        <TableCoin coins={coins} />
+      <TableCoin coins={coins} />
     </div>
   );
 }
