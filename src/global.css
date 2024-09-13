@@ -5,7 +5,7 @@
 
 body {
   margin: auto;
-  min-width: 1200px;
+  max-width: 1200px;
   min-height: 100vh;
   padding: 10px;
   background-color: #131315;
@@ -13,8 +13,8 @@ body {
 }
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
