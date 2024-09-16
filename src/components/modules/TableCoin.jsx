@@ -6,6 +6,7 @@ import chartDown from "../../assets/chart-down.svg";
 import { marketChart } from "../../services/cryptoApi";
 
 function TableCoin({ coins, isLoading, setChart }) {
+  
   return (
     <div className={styles.container}>
       {isLoading ? (
