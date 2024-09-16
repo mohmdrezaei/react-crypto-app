@@ -42,6 +42,7 @@ function Search({ currency, setCurrency }) {
   return (
     <div className={styles.searchBox}>
       <input
+      placeholder="Search"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
